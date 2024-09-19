@@ -20,8 +20,9 @@ const SearchTextList = () => {
     <SafeAreaView>
       <FlatList
         style={styles.listText}
+        horizontal
         data={DATA}
-        renderItem={({ item }) => <Text>{item.title}</Text>}
+        renderItem={({ item }) => <Text style={styles.text}>{item.title}</Text>}
         keyExtractor={(item) => item.id}
       />
     </SafeAreaView>
@@ -32,6 +33,15 @@ export default SearchTextList;
 
 const styles = StyleSheet.create({
   listText: {
-    flexDirection: "row",
+    marginHorizontal: "auto",
+    marginVertical:8,
+  },
+  text: {
+    backgroundColor: "#E96E6E",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginRight: 6,
+    borderRadius: 10,
+    fontSize:16
   },
 });
