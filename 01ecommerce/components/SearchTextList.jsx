@@ -33,14 +33,13 @@ export default SearchTextList;
 
 const styles = StyleSheet.create({
   listText: {
-    marginHorizontal: "auto",
-    marginVertical:8,
+    // marginVertical:10,
   },
   text: {
     backgroundColor: "#E96E6E",
-    paddingHorizontal: 12,
+    paddingHorizontal: 16,
     paddingVertical: 6,
-    marginRight: 6,
+    marginHorizontal: 10,
     borderRadius: 10,
     fontSize:16
   },

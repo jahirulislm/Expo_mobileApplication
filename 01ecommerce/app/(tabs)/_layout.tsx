@@ -27,7 +27,7 @@ export default function TabLayout() {
             <Ionicons name='cart' />
           ),
         }}
-      />
+      /> 
     </Tabs>
   );
 }
