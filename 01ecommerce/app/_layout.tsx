@@ -4,7 +4,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Product from "@/app/Product";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -25,9 +24,16 @@ export default function RootLayout() {
 
   return (
     <SafeAreaView style={ styles.container}>
-      <Stack >
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="Product" />
+     
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false,
+          
+         }} />
+        <Stack.Screen name="productpage" options={{
+          title:"Details",
+         
+        }}/>
+         
         <Stack.Screen name="+not-found" />
       </Stack>
     </SafeAreaView>

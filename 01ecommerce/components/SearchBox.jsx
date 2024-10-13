@@ -3,12 +3,6 @@ import { View, TextInput, StyleSheet, Text } from "react-native";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import { Ionicons } from "@expo/vector-icons";
 const SearchBox = () => {
-  const [text, setText] = useState("");
-
-  const handleInputChange = (input) => {
-    setText(input);
-  };
-
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Match Your Style</Text>
@@ -24,13 +18,13 @@ export default SearchBox;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    alignSelf:'center',
-    marginTop:10
+    alignSelf: "center",
+    marginTop: 10,
   },
   title: {
     fontSize: 28,
     color: "black",
-    fontWeight:'400'
+    fontWeight: "400",
   },
   input: {
     width: 351,

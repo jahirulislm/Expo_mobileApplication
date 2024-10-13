@@ -6,81 +6,52 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { router } from "expo-router";
-const DATA = [
-  {
-    id: "1",
-    title: "jacket jeans",
-    image: require("@/assets/images/img1.png"),
-    price: 20,
-  },
-  {
-    id: "2",
-    title: "Acrylic Sweater",
-    image: require("@/assets/images/img2.png"),
-    price: 22,
-  },
-  {
-    id: "3",
-    title: "Leather Jacket",
-    image: require("@/assets/images/img3.png"),
-    price: 25,
-  },
-  {
-    id: "4",
-    title: "Leather Jacket",
-    image: require("@/assets/images/img4.png"),
-    price: 30,
-  },
-];
-88;
+import { SafeAreaView } from "react-native-safe-area-context";
+import data from "@/components/data";
 
-// const Item = ({ title }) => (
-// <View style={styles.item}>
-//   <Text style={styles.title}>{title}</Text>
-// </View>
-// );
-
-const CardComponent = () => {
-  // source the image using useState
-  //   const [images, setimages] = useState([
-  //     require("../assets/images/img1.png"),
-  //     require("../assets/images/img2.png"),
-  //     require("../assets/images/img3.png"),
-  //   ]);
+const CardComponent = ({item}) => {
+  // const [products, setProducts] = useState(data.products);
   const navigation = useNavigation();
   return (
     <View>
-      <FlatList
-        contentContainerStyle={{ alignItems: "center" }}
-        numColumns={2}
-        showsHorizontalScrollIndicator={false}
-        data={DATA}
-        style={styles.imageBox}
-        renderItem={({ item, index }) => (
-          <View style={styles.imageContainer}>
-            <TouchableOpacity onPress={() => router.push("Product")}>
-              <Image source={item.image} key={index} style={styles.image} />
-              <Ionicons style={styles.icon} name="heart-outline" size={16} />
-            </TouchableOpacity>
-            <Text>{item.title}</Text>
-            <Text>$ {item.price}</Text>
-          </View>
-        )}
-      />
+      <SafeAreaView>
+        <FlatList
+          data={data}
+          style={{height:500}}
+          numColumns={2}
+          renderItem={({ item }) => (
+            <View style={styles.imageContainer} >
+              <TouchableOpacity onPress={() => navigation.navigate("productpage")}>
+                <Image source={item.image}  style={styles.image} />
+              </TouchableOpacity>
+                <Ionicons style={styles.icon} name="heart-outline" size={16} />
+                <View style={{ marginTop: 10 }}>
+                  <Text style={styles.text} >{item.title}</Text>
+                  <Text style={styles.textPrice} >$ {item.price}</Text>
+                </View>
+            </View>
+          )}
+          
+        />
+      <Text>ths is flatlist problem</Text>
+      </SafeAreaView>
     </View>
   );
 };
 
 export default CardComponent;
-
+const SIZE = [
+  { id: 1, size: "S" },
+  { id: 1, size: "L" },
+  { id: 3, size: "M" },
+  { id: 2, size: "XL" },
+];
 const styles = StyleSheet.create({
   imageContainer: {
-    marginTop:20,
+    marginTop: 20,
     marginHorizontal: 16,
   },
   image: {
@@ -99,5 +70,14 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 50,
     color: "#E55B5B",
+  },
+  text: {
+    fontSize: 16,
+    color: "#444444",
+    fontWeight: "600",
+  },
+  textPrice: {
+    color: "#9C9C9C",
+    fontSize: 14,
   },
 });
