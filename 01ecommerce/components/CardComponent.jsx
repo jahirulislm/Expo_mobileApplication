@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import data from "@/components/data";
+import data from "@/components/data.js";
 
 const CardComponent = ({item}) => {
   // const [products, setProducts] = useState(data.products);
@@ -18,24 +18,17 @@ const CardComponent = ({item}) => {
   return (
     <View>
       <SafeAreaView>
-        <FlatList
-          data={data}
-          style={{height:500}}
-          numColumns={2}
-          renderItem={({ item }) => (
-            <View style={styles.imageContainer} >
-              <TouchableOpacity onPress={() => navigation.navigate("productpage")}>
-                <Image source={item.image}  style={styles.image} />
-              </TouchableOpacity>
-                <Ionicons style={styles.icon} name="heart-outline" size={16} />
-                <View style={{ marginTop: 10 }}>
-                  <Text style={styles.text} >{item.title}</Text>
-                  <Text style={styles.textPrice} >$ {item.price}</Text>
-                </View>
-            </View>
-          )}
-          
-        />
+      <FlatList
+        data={data}
+        renderItem={({item}) => <Image source={item.image}/>}
+        keyExtractor={item => item.id}
+      />
+        <Image
+        style={{width:50, height:50}}
+        source={{
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
+        }}
+      />
       <Text>ths is flatlist problem</Text>
       </SafeAreaView>
     </View>
