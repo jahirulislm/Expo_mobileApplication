@@ -1,20 +1,23 @@
 import { StyleSheet, FlatList, View } from "react-native";
 import React from "react";
-import { Slides } from "@/index";
+import Slides from "../onboard/Slides";
 
 // rending data from local assets
 const slides = [
   {
     id: 1,
-    image: require("@/assets/images/1.png"),
+    image: require("../../assets/images/1.png"),
+    title: "Find the Best Hotel in the world",
   },
   {
     id: 2,
-    image: require("@/assets/images/2.png"),
+    image: require("../../assets/images/2.png"),
+    title: "Find the Best Hotel in the world",
   },
   {
     id: 3,
-    image: require("@/assets/images/3.png"),
+    image: require("../../assets/images/3.png"),
+    title: "Find the Best Hotel in the world",
   },
 ];
 const OnBoarding = () => {
@@ -30,7 +33,6 @@ const OnBoarding = () => {
             <Slides item={item} />
           </View>
         )}
-        // renderItem={(item) => <Slides item={item} />}
       />
 
       {/* <Slides /> // this component is gonna be rendered */}
@@ -39,5 +41,3 @@ const OnBoarding = () => {
 };
 
 export default OnBoarding;
-
-const styles = StyleSheet.create({});
