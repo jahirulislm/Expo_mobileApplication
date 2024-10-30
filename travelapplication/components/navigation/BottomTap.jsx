@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Chat, Home, Profile, Location } from "../../index";
@@ -20,17 +19,17 @@ const BottomTap = () => {
       initialRouteName="Home"
       activeColor="#EB6A58"
       tabBarHidekeyBoard={true}
-      headerShown={false}
-      inactiveColor="grey"
-      tabBarOptions={{ style: TabBarStyle }}
+      inactiveColor="red"
+      // headerShown={false}
+      screenOptions={{ headerShown: false }}
     >
       <Tab.Screen
         name="Home"
         component={Home}
-        options={{
+        screenOptions={{
           headerShown: false,
+          TabBarStyle: TabBarStyle,
           tabBarShowLabel: false,
-          headerShown: false,
           tabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "home" : "home-outline"}
@@ -43,10 +42,10 @@ const BottomTap = () => {
       <Tab.Screen
         name="Chat"
         component={Chat}
-        options={{
+        ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          headerShown: false,
+          TabBarStyle: TabBarStyle,
           tabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "chatbubble" : "chatbubble-outline"}
@@ -59,10 +58,10 @@ const BottomTap = () => {
       <Tab.Screen
         name="Location"
         component={Location}
-        options={{
+        ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          headerShown: false,
+          TabBarStyle: TabBarStyle,
           tabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "map" : "map-outline"}
@@ -75,10 +74,10 @@ const BottomTap = () => {
       <Tab.Screen
         name="Profile"
         component={Profile}
-        options={{
+        ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          headerShown: false,
+          TabBarStyle: TabBarStyle,
           tabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "person" : "person-add-outline"}

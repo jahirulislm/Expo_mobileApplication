@@ -1,7 +1,7 @@
 import { StyleSheet, Image, Text, View, Dimensions } from "react-native";
 import React from "react";
 import { HeightSpace, ReusableBTN, ReusableText } from "../../index";
-import { useNavigation } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 // import styles from "./slide.style";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
