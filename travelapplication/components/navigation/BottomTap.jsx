@@ -1,34 +1,35 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Chat, Home, Profile, Location } from "../../index";
-import { Ionicons } from "@expo/vector-icons";
-
+import Ionicons from "@expo/vector-icons/Ionicons";
 const Tab = createBottomTabNavigator();
 const TabBarStyle = {
-  padding: 20,
-  borderRadius: 20,
-  height: 80,
+  padding: 10,
+  borderRadius: 12,
+  height: 60,
   position: "absolute",
-  bottom: 20,
-  left: 20,
-  right: 20,
+  bottom: 8,
+  left: 12,
+  right: 12,
 };
 const BottomTap = () => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#EB6A58"
+      // activeColor="#EB6A58"
       tabBarHidekeyBoard={true}
       inactiveColor="red"
-      // headerShown={false}
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: TabBarStyle,
+        showIcon: true,
+      }}
     >
       <Tab.Screen
         name="Home"
         component={Home}
         screenOptions={{
           headerShown: false,
-          TabBarStyle: TabBarStyle,
           tabBarShowLabel: false,
           tabBarIcon: ({ focused }) => {
             <Ionicons
@@ -45,7 +46,7 @@ const BottomTap = () => {
         ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          TabBarStyle: TabBarStyle,
+          // TabBarStyle: TabBarStyle,
           tabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "chatbubble" : "chatbubble-outline"}
@@ -61,8 +62,9 @@ const BottomTap = () => {
         ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          TabBarStyle: TabBarStyle,
-          tabBarIcon: ({ focused }) => {
+          // TabBarStyle: TabBarStyle,
+
+          TabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "map" : "map-outline"}
               color={focused ? "green" : "gray"}
@@ -77,7 +79,7 @@ const BottomTap = () => {
         ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          TabBarStyle: TabBarStyle,
+          // TabBarStyle: TabBarStyle,
           tabBarIcon: ({ focused }) => {
             <Ionicons
               name={focused ? "person" : "person-add-outline"}
