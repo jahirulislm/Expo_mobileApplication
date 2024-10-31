@@ -1,10 +1,10 @@
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 import reusable_styles from "../reusable_comps/reusable_style";
-import { HeightSpace, Recommendation, ReusableText } from "../../index";
+import { HeightSpace, ReusableText } from "../../index";
 import TravelPlaces from "../places/TravelPlaces";
 import AntDesign from "@expo/vector-icons/AntDesign";
-
+import Recommendation from "../../components/Home/Recommendation";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Ionicons from "@expo/vector-icons/Ionicons";
 const Home = ({ navigation }) => {
@@ -34,10 +34,10 @@ const Home = ({ navigation }) => {
           family={"medium"}
           color="black"
         />
-        <HeightSpace height={10} />
+        {/* <HeightSpace height={4} /> */}
         <TravelPlaces />
         <HeightSpace height={10} />
-        {/* <Recommendation /> */}
+        <Recommendation />
       </View>
     </SafeAreaView>
   );

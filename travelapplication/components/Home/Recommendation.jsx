@@ -1,10 +1,17 @@
-import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import reusable_styles from "../reusable_comps/reusable_style";
 import ReusableText from "../reusable_comps/Reusable_text";
-import { Feather } from "@expo/vector-icons/Feather";
-import { Reusable_tile } from "../../index";
+import Feather from "@expo/vector-icons/Feather";
+// import { Reusable_tile } from "../../index";
+import Reusable_tile from "../reusable_comps/Reusable_tile";
 
 const Recommendation = () => {
   const navigation = useNavigation();
@@ -78,7 +85,7 @@ const Recommendation = () => {
         ]}
       >
         <ReusableText
-          text={"Places to Visit"}
+          text={"Recommendations"}
           size={22}
           family={"medium"}
           color="black"
@@ -87,12 +94,13 @@ const Recommendation = () => {
           <Feather name="list" size={24} color="gray" />
         </TouchableOpacity>
       </View>
-      // displaying data from Recommenddation
+      {/* // displaying data from Recommenddation */}
       <FlatList
         data={recommendations}
         horizontal
         keyExtractor={(item) => item.id}
         showsHorizontalScrollIndicator={false}
+        // contentContainerStyle:{columnGap:10}
         renderItem={({ item }) => (
           <Reusable_tile item={item} onPress={() => {}} />
         )}
@@ -105,6 +113,6 @@ export default Recommendation;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 30,
+    paddingTop: 30,
   },
 });

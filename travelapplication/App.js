@@ -2,7 +2,7 @@ import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Details, OnBoarding, Search } from "./index";
-import Recommend from "./components/screen/details/Recommend";
+import { Recommend } from "./index";
 import BottomTap from "./components/navigation/BottomTap";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 const Stack = createNativeStackNavigator();
