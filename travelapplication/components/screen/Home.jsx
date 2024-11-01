@@ -1,7 +1,7 @@
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 import reusable_styles from "../reusable_comps/reusable_style";
-import { HeightSpace, ReusableText } from "../../index";
+import { BestHotels, HeightSpace, ReusableText } from "../../index";
 import TravelPlaces from "../places/TravelPlaces";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Recommendation from "../../components/Home/Recommendation";
@@ -38,6 +38,8 @@ const Home = ({ navigation }) => {
         <TravelPlaces />
         <HeightSpace height={10} />
         <Recommendation />
+        <HeightSpace height={15} />
+        <BestHotels />
       </View>
     </SafeAreaView>
   );

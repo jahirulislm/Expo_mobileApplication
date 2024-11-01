@@ -1,8 +1,17 @@
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Details, OnBoarding, Search } from "./index";
-import { Recommend } from "./index";
+import {
+  Details,
+  OnBoarding,
+  Search,
+  Recommend,
+  PlaceDetails,
+  Hotel_Detail,
+  Hotel_List,
+  HotelSearch,
+} from "./index";
+
 import BottomTap from "./components/navigation/BottomTap";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 const Stack = createNativeStackNavigator();
@@ -49,6 +58,27 @@ export default function App() {
           <Stack.Screen
             name="Recommended"
             component={Recommend}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PlaceDetails"
+            component={PlaceDetails}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="HotelDetails"
+            component={Hotel_Detail}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="HotelList"
+            component={Hotel_List}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="HotelSeach"
+            component={HotelSearch}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

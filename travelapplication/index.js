@@ -17,6 +17,13 @@ import Recommendation from "./components/Home/Recommendation";
 import Recommend from "./components/screen/details/Recommend";
 import Reusable_tile from "./components/reusable_comps/Reusable_tile";
 import Rating from "./components/reusable_comps/Rating";
+import PlaceDetails from "./components/screen/details/PlaceDetails";
+import BestHotels from "./components/Home/BestHotels";
+import Hotel_Card from "./components/Tiles/Hotel/Hotel_Card";
+import Hotel_Detail from "./components/screen/details/Hotel_Detail";
+import Hotel_List from "./components/screen/details/Hotel_List";
+import HotelSearch from "./components/screen/search/HotelSearch";
+import PopularList from "./components/screen/details/PopularList";
 export {
   OnBoarding,
   ReusableText,
@@ -38,4 +45,11 @@ export {
   Recommend,
   Reusable_tile,
   Rating,
+  PlaceDetails,
+  BestHotels,
+  Hotel_Card,
+  Hotel_Detail,
+  Hotel_List,
+  HotelSearch,
+  PopularList,
 };

@@ -102,7 +102,12 @@ const Recommendation = () => {
         showsHorizontalScrollIndicator={false}
         // contentContainerStyle:{columnGap:10}
         renderItem={({ item }) => (
-          <Reusable_tile item={item} onPress={() => {}} />
+          <Reusable_tile
+            item={item}
+            onPress={() => {
+              navigation.navigate("PlaceDetails", item.id);
+            }}
+          /> // TODO:
         )}
       />
     </View>
