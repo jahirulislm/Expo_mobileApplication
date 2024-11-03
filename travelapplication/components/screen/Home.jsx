@@ -1,7 +1,7 @@
 import { StyleSheet, SafeAreaView, View } from "react-native";
 import React from "react";
 import reusable_styles from "../reusable_comps/reusable_style";
-import { BestHotels, HeightSpace, ReusableText } from "../../index";
+import { BestHotels, HeightSpace, Hotel_Card, ReusableText } from "../../index";
 import TravelPlaces from "../places/TravelPlaces";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Recommendation from "../../components/Home/Recommendation";

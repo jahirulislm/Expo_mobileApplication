@@ -1,10 +1,4 @@
-import {
-  FlatList,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import reusable_styles from "../reusable_comps/reusable_style";

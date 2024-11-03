@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import NetworkImage from "../../reusable_comps/NetworkImage";
 import HeightSpace from "../../reusable_comps/HeightSpace";
 import ReusableText from "../../reusable_comps/Reusable_text";
@@ -12,23 +11,22 @@ const Hotel_Card = ({ item, margin, onPress }) => {
       <View>
         <View style={styles.imageContainer}>
           <NetworkImage
-            width={styles.imageContainer}
-            source={TextMetrics.url}
+            source={item.imageUrl}
+            width={"90%"}
+            height={"100%"}
             radius={16}
           />
         </View>
-        <HeightSpace height={5} />
         <View style={{ padding: 10 }}>
           <ReusableText
-            text={item.hotel_name}
-            size={18}
+            text={item.title}
+            size={16}
             family={"medium"}
             color="black"
           />
-          <HeightSpace height={5} />
           <ReusableText
-            text={item.addressline1}
-            size={18}
+            text={item.desc}
+            size={14}
             family={"medium"}
             color="black"
           />
@@ -44,14 +42,17 @@ export default Hotel_Card;
 
 const styles = StyleSheet.create({
   card: (margin) => ({
-    width: "50%",
+    width: 170,
     borderRadius: 12,
-    backgroundColor: "#f5f5f5",
+    // backgroundColor: "#f5f5f5",
+    backgroundColor: "white",
     marginRight: margin,
+    // borderWidth: 1,
+    // borderColor: "red",
   }),
   imageContainer: {
     alignItems: "center",
     marginTop: 10,
-    height: 150,
+    height: 110,
   },
 });

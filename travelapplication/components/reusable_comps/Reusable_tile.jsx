@@ -41,8 +41,7 @@ const Reusable_tile = ({ item, onPress }) => {
             <Rating rating={item.rating} />
             <HeightSpace height={4} />
             <ReusableText
-              // text={` ${item.reviews} `}
-              text={""}
+              text={` ${item.reviews} `}
               size={14}
               family={"medium"}
               color="gray"

@@ -75,7 +75,7 @@ const Recommend = ({ navigation }) => {
           color1={"white"}
           icon={"search"}
           onPress={() => navigation.goBack()}
-          onPress1={() => navigation.navigate("Search")}
+          onPress1={() => navigation.navigate("HotelSeach")}
         />
       </View>
       <View style={{ paddingTop: 20 }}>
