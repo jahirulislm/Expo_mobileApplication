@@ -104,7 +104,7 @@ const BestHotels = () => {
           <Hotel_Card
             item={item}
             margin={10}
-            onPress={() => navigation.navigate("HotelSeach")}
+            onPress={() => navigation.navigate("HotelDetails")}
           />
         )}
       />

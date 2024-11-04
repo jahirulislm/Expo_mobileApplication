@@ -84,11 +84,7 @@ const TravelPlaces = ({ item }) => {
         showsHorizontalScrollIndicator={false}
         getItemCount={(data) => data.length}
         getItem={(data, index) => data[index]}
-        renderItem={(data, index) => (
-          <View>
-            <Country item={data.item} />
-          </View>
-        )}
+        renderItem={(data, index) => <Country item={data.item} />}
       />
     </View>
   );

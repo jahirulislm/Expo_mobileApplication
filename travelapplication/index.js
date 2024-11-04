@@ -23,7 +23,7 @@ import Hotel_Card from "./components/Tiles/Hotel/Hotel_Card";
 import Hotel_Detail from "./components/screen/details/Hotel_Detail";
 import Hotel_List from "./components/screen/details/Hotel_List";
 import HotelSearch from "./components/screen/search/HotelSearch";
-import PopularList from "./components/screen/details/PopularList";
+import PopularList from "./components/Country/PopularList";
 export {
   OnBoarding,
   ReusableText,
