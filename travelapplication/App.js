@@ -10,10 +10,15 @@ import {
   Hotel_Detail,
   Hotel_List,
   HotelSearch,
+  SelectRoom,
+  Payments,
+  Settings,
+  PersonalInformation,
 } from "./index";
 
 import BottomTap from "./components/navigation/BottomTap";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+
 const Stack = createNativeStackNavigator();
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -79,6 +84,26 @@ export default function App() {
           <Stack.Screen
             name="HotelSeach"
             component={HotelSearch}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SelectRoom"
+            component={SelectRoom}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Payment"
+            component={Payments}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PersonalInformation"
+            component={PersonalInformation}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Settings"
+            component={Settings}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

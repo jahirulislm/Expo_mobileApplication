@@ -24,6 +24,16 @@ import Hotel_Detail from "./components/screen/details/Hotel_Detail";
 import Hotel_List from "./components/screen/details/Hotel_List";
 import HotelSearch from "./components/screen/search/HotelSearch";
 import PopularList from "./components/Country/PopularList";
+import SelectRoom from "./components/screen/details/SelectRoom";
+import Payments from "./components/screen/profile/Payments";
+import Settings from "./components/screen/settings/Settings";
+import PersonalInformation from "./components/screen/personalinfo/PersonalInformation";
+import SettingsTIle from "./components/Tiles/setttings/SettingsTIle";
+import Failed from "./components/screen/booking/Failed";
+import Success from "./components/screen/booking/Success";
+import SignIn from "./components/screen/authentification/SignIn";
+import Registration from "./components/screen/authentification/Registration";
+
 export {
   OnBoarding,
   ReusableText,
@@ -52,4 +62,13 @@ export {
   Hotel_List,
   HotelSearch,
   PopularList,
+  SelectRoom,
+  Payments,
+  Settings,
+  PersonalInformation,
+  SettingsTIle,
+  Failed,
+  Success,
+  SignIn,
+  Registration,
 };

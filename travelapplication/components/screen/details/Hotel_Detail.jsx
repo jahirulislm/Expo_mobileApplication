@@ -11,6 +11,7 @@ import reusable_styles from "../../reusable_comps/reusable_style";
 import styles from "./HotelDetails_Style";
 import { Rating } from "react-native-stock-star-rating";
 import HotelMap from "../../Hotel/HotelMap";
+import ReusableBTN from "../../reusable_comps/ReusableBTN";
 const Hotel_Detail = ({ navigation }) => {
   const hotels = [
     {
@@ -135,6 +136,16 @@ const Hotel_Detail = ({ navigation }) => {
             />
           </View>
           {/* <HotelMap /> */}
+          <ReusableBTN
+            onPress={() => navigation.navigate("SelectRoom")}
+            btnText={"Select Room"}
+            width={"80%"}
+            backgroundColor={"green"}
+            borderColor={"gray"}
+            borderWidth={1}
+            textColor={"white"}
+            fontWeight={"medium"}
+          />
         </View>
       </View>
       {/* </ScrollView> */}

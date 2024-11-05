@@ -2,6 +2,8 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Chat, Home, Profile, Location } from "../../index";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import TopTab from "./TopTab";
+import AuthTopTab from "./AuthTopTab";
 const Tab = createBottomTabNavigator();
 const TabBarStyle = {
   padding: 10,
@@ -42,7 +44,7 @@ const BottomTap = () => {
       />
       <Tab.Screen
         name="Chat"
-        component={Chat}
+        component={AuthTopTab}
         ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
@@ -75,7 +77,7 @@ const BottomTap = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={TopTab}
         ScreenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
