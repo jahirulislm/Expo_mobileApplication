@@ -33,8 +33,9 @@ import Failed from "./components/screen/booking/Failed";
 import Success from "./components/screen/booking/Success";
 import SignIn from "./components/screen/authentification/SignIn";
 import Registration from "./components/screen/authentification/Registration";
-
+import SelectedRoom from "./components/screen/details/SelectedRoom";
 export {
+  SelectedRoom,
   OnBoarding,
   ReusableText,
   // Slides,

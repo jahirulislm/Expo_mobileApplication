@@ -14,6 +14,7 @@ import {
   Payments,
   Settings,
   PersonalInformation,
+  SelectedRoom,
 } from "./index";
 
 import BottomTap from "./components/navigation/BottomTap";
@@ -104,6 +105,11 @@ export default function App() {
           <Stack.Screen
             name="Settings"
             component={Settings}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SelectedRoom"
+            component={SelectedRoom}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

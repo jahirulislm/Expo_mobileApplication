@@ -1,17 +1,16 @@
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-
-// import { object, string, number, date, InferType } from "yup";
-
-// let userSchema = object({
-//   name: string().required(),
-//   age: number().required().positive().integer(),
-//   email: string().email(),
-//   website: string().url().nullable(),
-//   createdOn: date().default(() => new Date()),
-// });
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import HeightSpace from "../../reusable_comps/HeightSpace";
+import ReusableBTN from "../../reusable_comps/ReusableBTN";
 
 const validationSchema = Yup.object().shape({
   password: Yup.string().min(8, "Password is required").required(),
@@ -20,28 +19,108 @@ const validationSchema = Yup.object().shape({
 
 const SignIn = () => {
   const { loader, setLoader } = useState(false);
-  const [responseData, setResponseData] = useState();
-  const { obsecureText, setaObsecureText } = useState();
+  const { responseData, setResponseData } = useState(null);
+  const { obsecureText, setaObsecureText } = useState(false);
   return (
     <View style={styles.container}>
       <Formik
         initialValues={{ email: "" }}
+        validationSchema={validationSchema} // validation schema object create with formik
         onSubmit={(values) => console.log(values)}
       >
         {({
           handleChange,
-          handleBlur,
+          touched,
           handleSubmit,
           values,
           errors,
-          touched,
+          isValid, // isValid is true when form is valid
+          setFieldTouched,
         }) => (
           <View>
-            <View
-              style={styles.inputWrapper(touched.email ? "white" : "red")}
-            ></View>
+            <View style={styles.wrapper}>
+              <Text style={styles.label}>Email</Text>
+              <View>
+                <View
+                  style={styles.inputWrapper(touched.email ? "grey" : "white")}
+                >
+                  <MaterialCommunityIcons
+                    name="email-outline"
+                    size={20}
+                    color={"grey"}
+                  />
+                  <TextInput
+                    style={{ flex: 1, paddingHorizontal: 10 }}
+                    placeholder="Enter your email"
+                    value={values.email}
+                    onChangeText={handleChange("email")}
+                    onFocus={() => setFieldTouched("email")}
+                    onBlur={() => setFieldTouched("email", "")}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                  />
+                </View>
+                {touched.email && errors.email && (
+                  <Text style={{ color: "red", marginBottom: 5 }}>
+                    {errors.email}
+                  </Text>
+                )}
+              </View>
+            </View>
+            <View style={styles.wrapper}>
+              <Text style={styles.label}>Password</Text>
+              <View>
+                <View
+                  style={styles.inputWrapper(
+                    touched.password ? "grey" : "white"
+                  )}
+                >
+                  <MaterialCommunityIcons
+                    name="lock-outline"
+                    size={20}
+                    color={"grey"}
+                  />
+                  <TextInput
+                    style={{ flex: 1, paddingHorizontal: 10 }}
+                    secureTextEntry={obsecureText}
+                    placeholder="Enter your password"
+                    value={values.password}
+                    onChangeText={handleChange("password")}
+                    onFocus={() => setFieldTouched("password")}
+                    onBlur={() => setFieldTouched("password", "")}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                  />
+                  <TouchableOpacity
+                    style={{ marginLeft: 10 }}
+                    onPress={() => setaObsecureText(!obsecureText)}
+                  >
+                    <MaterialCommunityIcons
+                      name={obsecureText ? "eye-outline" : "eye-off-outline"}
+                      size={20}
+                      color={"grey"}
+                    />
+                  </TouchableOpacity>
+                </View>
+                {touched.password && errors.password && (
+                  <Text style={{ color: "red", marginBottom: 5 }}>
+                    {errors.password}
+                  </Text>
+                )}
+              </View>
+            </View>
 
-            <Button onPress={handleSubmit} title="Submit" />
+            <HeightSpace height={10} />
+            <ReusableBTN
+              onPress={() => handleSubmit()}
+              btnText={"Sign in"}
+              width={"90%"}
+              backgroundColor={"green"}
+              borderColor={"gray"}
+              borderWidth={1}
+              textColor={"white"}
+              fontWeight={"medium"}
+            />
           </View>
         )}
       </Formik>
@@ -65,5 +144,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "white",
     paddingHorizontal: 14,
+    // justifyContent: "center",
+    alignItems: "center",
   }),
+  wrapper: {
+    marginBottom: 20,
+  },
+  label: {
+    fontFamily: "Helvetica",
+    fontWeight: "bold",
+    fontSize: 12,
+    marginBottom: 5,
+    marginEnd: 10,
+    textAlign: "right",
+  },
 });
