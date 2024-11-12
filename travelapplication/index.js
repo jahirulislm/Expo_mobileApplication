@@ -34,7 +34,9 @@ import Success from "./components/screen/booking/Success";
 import SignIn from "./components/screen/authentification/SignIn";
 import Registration from "./components/screen/authentification/Registration";
 import SelectedRoom from "./components/screen/details/SelectedRoom";
+import Counter from "./components/reusable_comps/Counter";
 export {
+  Counter,
   SelectedRoom,
   OnBoarding,
   ReusableText,

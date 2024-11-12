@@ -87,17 +87,15 @@ const SelectRoom = ({ navigation }) => {
             style={{
               marginHorizontal: 20,
               marginBottom: 12,
-              // borderColor: "grey",
               backgroundColor: "white",
               borderRadius: 15,
-              // borderWidth: 1,
             }}
           >
             <Reusable_tile item={item} />
             <View style={{ margin: 10, alignItems: "center" }}>
               <ReusableBTN
                 onPress={() => navigation.navigate("SelectedRoom", { item })}
-                btnText={"Find Best Hotels"}
+                btnText={"Done"}
                 width={"90%"}
                 backgroundColor={"green"}
                 borderColor={"gray"}

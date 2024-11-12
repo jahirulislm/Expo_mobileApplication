@@ -29,7 +29,7 @@ const Success = ({ navigation }) => {
         <HeightSpace height={40} />
         <View style={{ alignItems: "center" }}>
           <ReusableText
-            text="Booking Success!"
+            text="Booking Successed!"
             size={22}
             family={"bold"}
             color={"#333"}
