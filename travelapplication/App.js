@@ -21,6 +21,7 @@ import {
 
 import BottomTap from "./components/navigation/BottomTap";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
   // }, []);
 
   return (
+    // <SafeAreaView>   
     <GestureHandlerRootView>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
@@ -127,5 +129,6 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
+    //  </SafeAreaView>
   );
 }

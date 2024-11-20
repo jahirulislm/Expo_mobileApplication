@@ -8,13 +8,13 @@ import {
 } from "react-native";
 import React from "react";
 
-const ReusableText = ({ text, family, size, color, align }) => {
+const ReusableText = ({ text, family, size, color, align,textArea }) => {
   return (
     <View>
       <Text
         style={[
           styles.textStyle,
-          { fontFamily: family, fontSize: size, color: color, align },
+          { fontFamily: family, fontSize: size, color: color, align,textArea }
         ]}
       >
         {text}
@@ -26,10 +26,11 @@ const ReusableText = ({ text, family, size, color, align }) => {
 export default ReusableText;
 
 const styles = StyleSheet.create({
-  textStyle: (family, size, color, align) => ({
+  textStyle: (family, size, color, align,textArea) => ({
     fontFamily: family,
     fontSize: size,
     color: color,
     textAlign: align,
+    textArea: textArea
   }),
 });

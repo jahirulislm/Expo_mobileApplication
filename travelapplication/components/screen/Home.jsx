@@ -10,10 +10,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={reusable_styles.container}>
-      <View>
+      <View style={{padding:10, marginTop:10}}>
         <View style={reusable_styles.rowWithSpace("space-between")}>
           <ReusableText
-            text={"hey User!"}
+            text={"Book Your Dream Hotel To Stay!"}
             size={24}
             family={"medium"}
             color="black"
