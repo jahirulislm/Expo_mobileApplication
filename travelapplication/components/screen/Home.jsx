@@ -6,11 +6,10 @@ import TravelPlaces from "../places/TravelPlaces";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Recommendation from "../../components/Home/Recommendation";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Ionicons from "@expo/vector-icons/Ionicons";
 const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={reusable_styles.container}>
-      <View style={{padding:10, marginTop:10}}>
+      <View style={{ padding: 10, marginTop: 10 }}>
         <View style={reusable_styles.rowWithSpace("space-between")}>
           <ReusableText
             text={"Book Your Dream Hotel To Stay!"}
@@ -18,7 +17,7 @@ const Home = ({ navigation }) => {
             family={"medium"}
             color="black"
           />
-
+          <HeightSpace height={16} />
           <TouchableOpacity
             style={styles.box}
             onPress={() => navigation.navigate("Search")}
@@ -34,7 +33,7 @@ const Home = ({ navigation }) => {
           family={"medium"}
           color="black"
         />
-        {/* <HeightSpace height={4} /> */}
+        <HeightSpace height={12} />
         <TravelPlaces />
         <HeightSpace height={10} />
         <Recommendation />
