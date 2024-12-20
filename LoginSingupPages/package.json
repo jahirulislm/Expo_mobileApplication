@@ -41,7 +41,8 @@
     "react-native-svg": "15.8.0",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.2",
-    "expo-linear-gradient": "~14.0.1"
+    "expo-linear-gradient": "~14.0.1",
+    "undefined": "react-native-vector-icons/Ionicons"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

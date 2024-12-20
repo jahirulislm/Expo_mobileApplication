@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Login from "./Login";
-import SignUp from "./SignUp";
+// import Login from "./Login";
 
+import Onboarding1 from "./Onboarding1";
 const Page = () => {
   return (
     <View>
-      <Login />
-      {/* <SignUp /> */}
+      <Onboarding1 />
     </View>
   );
 };
