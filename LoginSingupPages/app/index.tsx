@@ -2,11 +2,11 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 // import Login from "./Login";
 
-import Onboarding1 from "./Onboarding1";
+import OnboardingScreen from "./OnboardingScreen";
 const Page = () => {
   return (
-    <View>
-      <Onboarding1 />
+    <View style={{ flex: 1 }}>
+      <OnboardingScreen />
     </View>
   );
 };
