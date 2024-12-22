@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 const OnboardingScreen = () => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: "#346df6" }]}>
       {/* Background Gradient */}
       <LinearGradient
         colors={["#4c669f", "#3b5998", "#192f6a"]}
@@ -19,11 +19,11 @@ const OnboardingScreen = () => {
       </TouchableOpacity>
       {/* Foreground Logo */}
       <View style={styles.logoContainer}>
-        {/* <Image
+        <Image
           source={require("../assets/images/icon.png")}
           style={styles.logo}
           resizeMode="contain"
-        /> */}
+        />
       </View>
 
       {/* Content Container */}
@@ -46,6 +46,7 @@ const OnboardingScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "red",
   },
   logoContainer: {
     position: "absolute",
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logo: {
-    width: 120,
+    width: 600,
     height: 120,
   },
   contentContainer: {

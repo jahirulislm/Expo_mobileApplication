@@ -3,6 +3,7 @@ import React from "react";
 // import Login from "./Login";
 
 import OnboardingScreen from "./OnboardingScreen";
+import { Stack } from "expo-router";
 const Page = () => {
   return (
     <View style={{ flex: 1 }}>
