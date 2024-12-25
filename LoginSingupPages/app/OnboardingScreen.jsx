@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 
-const OnboardingScreen = () => {
+const OnboardingScreen = ({ navigation }) => {
   const [progress] = useState(0.33); // Add more states if you have multiple screens
   return (
     <View style={styles.container}>
@@ -15,25 +15,33 @@ const OnboardingScreen = () => {
           marginHorizontal: 14,
         }}
       >
-        <View>
-          <Text style={{ color: "black", fontSize: 18 }}>Skip</Text>
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+          <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
+            Skip
+          </Text>
+        </TouchableOpacity>
         {/* Progress Bar */}
         <View
           style={[
             styles.progressContainer,
-            { backgroundColor: "red", borderColor: "#fff", borderWidth: 1 },
+            { backgroundColor: "#dfd5d5", borderColor: "#fff", borderWidth: 1 },
           ]}
         >
           <View
             style={[
               styles.progressBar,
-              { backgroundColor: "green", width: `${progress * 100}%` },
+              { backgroundColor: "#ffffff", width: `${progress * 100}%` },
             ]}
           />
         </View>
       </View>
       <View>
+        <View>
+          <Image
+            source={require("../assets/images/react-logo.png")}
+            style={{ width: "70%", height: 300 }}
+          />
+        </View>
         <Text>Text is here for hero sections</Text>
       </View>
     </View>
