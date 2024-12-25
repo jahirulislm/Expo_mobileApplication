@@ -1,43 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 
 const OnboardingScreen = () => {
+  const [progress] = useState(0.33); // Add more states if you have multiple screens
   return (
-    <View style={[styles.container, { backgroundColor: "#346df6" }]}>
-      {/* Background Gradient */}
-      <LinearGradient
-        colors={["#4c669f", "#3b5998", "#192f6a"]}
-        style={StyleSheet.absoluteFillObject}
-      />
-      <TouchableOpacity
-        style={styles.skipButton}
-        onPress={() => navigation.navigate("Login")}
+    <View style={styles.container}>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "space-between",
+          height: 50,
+          marginHorizontal: 14,
+        }}
       >
-        <Text style={styles.skipText}>Skip</Text>
-      </TouchableOpacity>
-      {/* Foreground Logo */}
-      <View style={styles.logoContainer}>
-        <Image
-          source={require("../assets/images/icon.png")}
-          style={styles.logo}
-          resizeMode="contain"
-        />
-      </View>
-
-      {/* Content Container */}
-      <View style={styles.contentContainer}>
-        <Text style={styles.title}>Welcome to LoginApp</Text>
-        <Text style={styles.description}>
-          Your secure gateway to seamless authentication. Create an account or
-          sign in to get started!
-        </Text>
-
-        {/* Illustration Box */}
-        <View style={styles.illustrationBox}>
-          <Ionicons name="shield-checkmark" size={60} color="#4CAF50" />
+        <View>
+          <Text style={{ color: "black", fontSize: 18 }}>Skip</Text>
         </View>
+        {/* Progress Bar */}
+        <View
+          style={[
+            styles.progressContainer,
+            { backgroundColor: "red", borderColor: "#fff", borderWidth: 1 },
+          ]}
+        >
+          <View
+            style={[
+              styles.progressBar,
+              { backgroundColor: "green", width: `${progress * 100}%` },
+            ]}
+          />
+        </View>
+      </View>
+      <View>
+        <Text>Text is here for hero sections</Text>
       </View>
     </View>
   );
@@ -46,62 +43,24 @@ const OnboardingScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "#346df6",
   },
-  logoContainer: {
+  progressContainer: {
     position: "absolute",
-    top: "10%",
-    width: "100%",
-    alignItems: "center",
-  },
-  logo: {
-    width: 600,
-    height: 120,
-  },
-  contentContainer: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "#ffffff",
-    marginBottom: 20,
-    textAlign: "center",
-  },
-  description: {
-    fontSize: 16,
-    color: "#ffffff",
-    textAlign: "center",
-    marginBottom: 30,
-    lineHeight: 24,
-  },
-  illustrationBox: {
+    // top: 40,
+    // right: 20,
     width: 100,
-    height: 100,
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
-    borderRadius: 15,
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 5,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    height: 6,
+    backgroundColor: "rgba(255,255,255,0.3)",
+    borderRadius: 3,
+    overflow: "hidden",
+    borderColor: "#fff",
+    borderWidth: 1,
   },
-  skipButton: {
-    position: "absolute",
-    top: 50,
-    right: 20,
-    zIndex: 1,
-    padding: 10,
-  },
-  skipText: {
-    color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "600",
+  progressBar: {
+    height: "100%",
+    backgroundColor: "#fff",
+    borderRadius: 3,
   },
 });
 
