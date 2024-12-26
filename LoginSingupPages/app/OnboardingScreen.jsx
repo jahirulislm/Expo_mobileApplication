@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 const OnboardingScreen = ({ navigation }) => {
   const [progress] = useState(0.33); // Add more states if you have multiple screens
@@ -16,15 +16,27 @@ const OnboardingScreen = ({ navigation }) => {
         }}
       >
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-          <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
-            Skip
-          </Text>
+          <View
+            style={{
+              borderColor: "black",
+              borderWidth: 1,
+            }}
+          >
+            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
+              Skip
+              <MaterialIcons
+                name="keyboard-arrow-right"
+                size={28}
+                color="black"
+              />
+            </Text>
+          </View>
         </TouchableOpacity>
         {/* Progress Bar */}
         <View
           style={[
             styles.progressContainer,
-            { backgroundColor: "#dfd5d5", borderColor: "#fff", borderWidth: 1 },
+            { borderColor: "#fff", borderWidth: 1 },
           ]}
         >
           <View
