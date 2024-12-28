@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-const OnboardingScreen = ({ navigation }) => {
+const OnboardingScreenTwo = ({ navigation }) => {
   const [progress] = useState(0.33); // Add more states if you have multiple screens
   return (
     <View style={styles.container}>
@@ -14,14 +14,16 @@ const OnboardingScreen = ({ navigation }) => {
           marginHorizontal: 14,
         }}
       >
-        <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("OnboardingScreenThree")}
+        >
           <View
             style={{
               flexDirection: "row",
               justifyContent: "center",
             }}
           >
-            <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
+            <Text style={{ color: "#fff", fontSize: 16, fontWeight: "bold" }}>
               Skip
             </Text>
             <MaterialIcons
@@ -47,17 +49,18 @@ const OnboardingScreen = ({ navigation }) => {
           />
         </View>
       </View>
-      <View>
-        <View>
-          <Text>Start Your Online Presence</Text>
+      <View style={styles.contentContainer}>
+        <View style={styles.textContainer}>
+          <Text style={styles.titleText}>Start Your Online Presence</Text>
+          <Text style={styles.subtitleText}>Register or SignUp</Text>
         </View>
-        <View>
+        <View style={styles.imageContainer}>
           <Image
-            source={require("../assets/images/react-logo.png")}
-            style={{ width: "70%", height: 300 }}
+            source={require("../assets/images/PLang__logos_image.jpg")}
+            style={styles.image}
+            resizeMode="contain"
           />
         </View>
-        <Text>Text is here for hero sections</Text>
       </View>
     </View>
   );
@@ -70,8 +73,6 @@ const styles = StyleSheet.create({
   },
   progressContainer: {
     position: "absolute",
-    // top: 40,
-    // right: 20,
     width: 100,
     height: 6,
     backgroundColor: "rgba(255,255,255,0.3)",
@@ -85,6 +86,36 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 3,
   },
+  contentContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  textContainer: {
+    alignItems: "center",
+    marginBottom: 30,
+  },
+  titleText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 10,
+    color: "#fff",
+  },
+  subtitleText: {
+    fontSize: 16,
+    textAlign: "center",
+    color: "#fff",
+  },
+  imageContainer: {
+    width: "100%",
+    alignItems: "center",
+  },
+  image: {
+    width: "70%",
+    height: 300,
+  },
 });
 
-export default OnboardingScreen;
+export default OnboardingScreenTwo;
