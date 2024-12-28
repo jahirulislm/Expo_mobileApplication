@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const OnboardingScreen = ({ navigation }) => {
   const [progress] = useState(0.33); // Add more states if you have multiple screens
@@ -18,18 +17,19 @@ const OnboardingScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
           <View
             style={{
-              borderColor: "black",
-              borderWidth: 1,
+              flexDirection: "row",
+              justifyContent: "center",
             }}
           >
             <Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
               Skip
-              <MaterialIcons
-                name="keyboard-arrow-right"
-                size={28}
-                color="black"
-              />
             </Text>
+            <MaterialIcons
+              name="keyboard-arrow-right"
+              size={28}
+              color="black"
+              style={{ color: "#fff" }}
+            />
           </View>
         </TouchableOpacity>
         {/* Progress Bar */}
@@ -48,6 +48,9 @@ const OnboardingScreen = ({ navigation }) => {
         </View>
       </View>
       <View>
+        <View>
+          <Text>Start Your Online Presence</Text>
+        </View>
         <View>
           <Image
             source={require("../assets/images/react-logo.png")}
