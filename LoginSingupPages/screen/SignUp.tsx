@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import { Button, Text, TextInput } from "react-native";
 
-const SignupForm = () => {
+const SignUpScreen = () => {
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   const formik = useFormik({
@@ -15,4 +15,4 @@ const SignupForm = () => {
   });
   return <Text>Form</Text>;
 };
-export default SignupForm;
+export default SignUpScreen;

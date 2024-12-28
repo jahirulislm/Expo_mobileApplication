@@ -16,7 +16,7 @@ const OnboardingScreen = () => {
           backgroundColor: "red",
         }}
       >
-        <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignUpScreen")}>
           <View
             style={{
               flexDirection: "row",
