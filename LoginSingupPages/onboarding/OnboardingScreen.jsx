@@ -10,14 +10,13 @@ const OnboardingScreen = () => {
       <View
         style={{
           justifyContent: "center",
-          alignItems: "space-between",
+          alignItems: "space-around",
           height: 50,
           marginHorizontal: 14,
+          backgroundColor: "red",
         }}
       >
-        <TouchableOpacity
-          onPress={() => navigation.navigate("OnboardingScreenTwo")}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
           <View
             style={{
               flexDirection: "row",
